@@ -2,7 +2,7 @@ Summary:	A 2048 clone for GNOME
 Summary(pl.UTF-8):	Klon gry 2048 dla GNOME
 Name:		gnome-2048
 Version:	3.22.0
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-2048/3.22/%{name}-%{version}.tar.xz
