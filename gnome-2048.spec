@@ -1,33 +1,37 @@
 Summary:	A 2048 clone for GNOME
 Summary(pl.UTF-8):	Klon gry 2048 dla GNOME
 Name:		gnome-2048
-Version:	3.22.0
-Release:	2
+Version:	3.32.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-2048/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	22c46464ca6933dd89ea2f0eefae25ac
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-2048/3.32/%{name}-%{version}.tar.xz
+# Source0-md5:	d7abd4ac3a01828df742b68a658552c2
 URL:		https://wiki.gnome.org/Apps/2048
-BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	appstream-glib
 BuildRequires:	clutter-devel >= 1.12.0
 BuildRequires:	clutter-gtk-devel >= 1.6.0
 BuildRequires:	gettext-tools
-BuildRequires:	gtk+3-devel >= 3.12.0
-BuildRequires:	intltool >= 0.50.0
+BuildRequires:	glib2-devel >= 1:2.40.0
+BuildRequires:	gtk+3-devel >= 3.22.23
 BuildRequires:	libgnome-games-support-devel >= 1.0
 BuildRequires:	libgee-devel >= 0.14.0
+BuildRequires:	meson >= 0.37.1
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	python3 >= 1:3
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
+BuildRequires:	vala-libgnome-games-support >= 1.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	glib2 >= 1:2.40.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	clutter >= 1.12.0
 Requires:	clutter-gtk >= 1.6.0
-Requires:	gtk+3 >= 3.12.0
+Requires:	glib2 >= 1:2.40.0
+Requires:	gtk+3 >= 3.22.23
 Requires:	hicolor-icon-theme
 Requires:	libgnome-games-support >= 1.0
 Requires:	libgee >= 0.14.0
@@ -43,19 +47,14 @@ Klon popularnej gry 2048 przeznaczony dla środowiska GNOME.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules
-%{__make}
+%meson build
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome
 
@@ -74,8 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_bindir}/gnome-2048
-%{_desktopdir}/org.gnome.gnome-2048.desktop
-%{_datadir}/appdata/org.gnome.gnome-2048.appdata.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.2048.gschema.xml
-%{_iconsdir}/hicolor/*x*/apps/gnome-2048.png
-%{_iconsdir}/hicolor/symbolic/apps/gnome-2048-symbolic.svg
+%{_datadir}/glib-2.0/schemas/org.gnome.TwentyFortyEight.gschema.xml
+%{_datadir}/metainfo/org.gnome.TwentyFortyEight.appdata.xml
+%{_desktopdir}/org.gnome.TwentyFortyEight.desktop
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.TwentyFortyEight.png
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.TwentyFortyEight-symbolic.svg
