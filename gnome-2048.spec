@@ -1,12 +1,12 @@
 Summary:	A 2048 clone for GNOME
 Summary(pl.UTF-8):	Klon gry 2048 dla GNOME
 Name:		gnome-2048
-Version:	3.36.2
+Version:	3.36.3
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-2048/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	460716d9be2fea87cfd0bc1212e5a495
+# Source0-md5:	fbf197b0680cb27351f343246a843237
 URL:		https://wiki.gnome.org/Apps/2048
 BuildRequires:	appstream-glib
 BuildRequires:	clutter-devel >= 1.12.0
