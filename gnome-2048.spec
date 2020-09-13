@@ -1,20 +1,20 @@
 Summary:	A 2048 clone for GNOME
 Summary(pl.UTF-8):	Klon gry 2048 dla GNOME
 Name:		gnome-2048
-Version:	3.36.4
+Version:	3.38.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-2048/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	e258fa263380e8366900cf13b90b4a3e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-2048/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	572f802433a55a0dce8b6f60ec083135
 URL:		https://wiki.gnome.org/Apps/2048
 BuildRequires:	appstream-glib
 BuildRequires:	clutter-devel >= 1.12.0
 BuildRequires:	clutter-gtk-devel >= 1.6.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.42.0
-BuildRequires:	gtk+3-devel >= 3.22.23
-BuildRequires:	libgnome-games-support-devel >= 1.0
+BuildRequires:	gtk+3-devel >= 3.24.0
+BuildRequires:	libgnome-games-support-devel >= 1.7.1
 BuildRequires:	libgee-devel >= 0.14.0
 BuildRequires:	meson >= 0.37.1
 BuildRequires:	ninja >= 1.5
@@ -23,7 +23,7 @@ BuildRequires:	python3 >= 1:3
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
-BuildRequires:	vala-libgnome-games-support >= 1.0
+BuildRequires:	vala-libgnome-games-support >= 1.7.1
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.42.0
@@ -31,9 +31,9 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	clutter >= 1.12.0
 Requires:	clutter-gtk >= 1.6.0
 Requires:	glib2 >= 1:2.42.0
-Requires:	gtk+3 >= 3.22.23
+Requires:	gtk+3 >= 3.24.0
 Requires:	hicolor-icon-theme
-Requires:	libgnome-games-support >= 1.0
+Requires:	libgnome-games-support >= 1.7.1
 Requires:	libgee >= 0.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
